@@ -1,23 +1,26 @@
-body {
+/* Reset mặc định và full chiều cao */
+html, body {
   margin: 0;
+  padding: 0;
+  height: 100%;
   background: #111;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  font-family: sans-serif;
 }
 
+/* Khối slider bao trọn chiều cao màn hình */
 .slider {
   position: relative;
-  width: 80%;
-  max-width: 700px;
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
   overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.3);
 }
 
+/* Ảnh co theo khung */
 .slide {
   width: 100%;
+  height: 100%;
+  object-fit: cover; /* hoặc contain nếu bạn muốn toàn bộ ảnh vừa khung */
   display: none;
 }
 
@@ -25,17 +28,19 @@ body {
   display: block;
 }
 
+/* Nút điều hướng */
 .prev, .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.5);
   color: white;
   border: none;
-  font-size: 2rem;
-  padding: 10px;
+  font-size: 2.5rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
+  z-index: 1;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev { left: 20px; }
+.next { right: 20px; }
